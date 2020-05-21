@@ -2,7 +2,7 @@ FROM quay.io/occ_data/jupyternotebook:1.9.1
 USER root
 
 RUN apt-get update
-RUN apt-get install openjdk-8-jdk
+RUN apt-get install -y openjdk-8-jdk
 WORKDIR /usr/local
 
 #LIB DEPENDENCIES
