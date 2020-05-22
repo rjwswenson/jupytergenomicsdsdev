@@ -24,6 +24,11 @@ RUN export PATH=$PATH:/usr/local/services.gradle.org/distributions/gradle-4.10.2
 RUN ls -al
 WORKDIR /usr/local/hail/hail
 RUN make install-on-cluster HAIL_COMPILE_NATIVES=1 SPARK_VERSION=2.4.0 PY4J_VERSION=0.10.7
+RUN ls -al /usr/local/hail/hail
+RUN ls /usr/local/hail/hail/build/libs/hail-all-spark.jar
+
+
+
 
 
 
