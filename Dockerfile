@@ -8,6 +8,7 @@ WORKDIR /usr/local
 #LIB DEPENDENCIES
 RUN apt-get install -y liblz4-tool && apt-get install -y liblz4-dev
 
+
 #UTILITIES
 RUN apt-get install -y wget && apt-get -y install git
 RUN wget -r https://services.gradle.org/distributions/gradle-4.10.2-bin.zip && unzip services.gradle.org/distributions/gradle-4.10.2-bin.zip
@@ -26,6 +27,10 @@ WORKDIR /usr/local/hail/hail
 RUN make install-on-cluster HAIL_COMPILE_NATIVES=1 SPARK_VERSION=2.4.0 PY4J_VERSION=0.10.7
 RUN ls -al /usr/local/hail/hail
 RUN ls /usr/local/hail/hail/build/libs/hail-all-spark.jar
+
+#CHECK VERSIONING
+RUN java -version
+RUN python3 -V
 
 
 
